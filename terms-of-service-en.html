@@ -35,10 +35,10 @@
   </nav>
 
   <h1>Congoloz Terms of Service</h1>
-  <p class="meta">Last Updated: November 21, 2026 • Version: 2026-11-20 • Developer: Tarık Buğra Pak (<code>com.congoloz.app</code>) • Contact: <a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a></p>
+  <p class="meta">Last Updated: November 21, 2026 • Version: 2026-11-21 • Developer: Tarık Buğra Pak (<code>com.congoloz.app</code>) • Contact: <a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a></p>
 
   <h2>1. Age Eligibility (Global 13+)</h2>
-  <p>Congoloz is designed for users aged 13 and older. Children under 13 are not permitted to create an account. If you are below the digital consent age in your jurisdiction, you must use the app with the knowledge and approval of your parent or legal guardian.</p>
+  <p>Congoloz is designed for users aged 13 and older based on self-declared age entry (no official government ID verification is performed). Children under 13 are not permitted to create an account. If you are below the digital consent age in your jurisdiction, you must use the app with the knowledge and permission of your parent or legal guardian; the in-app guardian checkbox is a self-declaration and does not constitute identity-verified parental consent (VPC).</p>
 
   <h2>2. Service Scope &amp; Virtual Economy</h2>
   <ul>
@@ -56,7 +56,7 @@
   <p>Inappropriate usernames or rights violations can be reported directly from the Global Leaderboard or by emailing <a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a>. Valid reports are reviewed within 48 hours.</p>
 
   <h2>5. Account Termination &amp; Disclaimer</h2>
-  <p>You may terminate your account by initiating staged account deletion in-app (<strong>Settings → Profile &amp; Account → Delete My Account</strong>). In-app deletion requires an active internet connection and recent authentication (prompting re-authentication if <code>requires-recent-login</code> occurs); if cloud data removal, Firebase Auth account deletion, or local device data cleanup fails, the app reports the specific failed stage and allows you to retry. For Sign in with Apple users, because the server-side token revocation endpoint is not enabled by default in this build, the app deletes your cloud and local data and notifies you to revoke Congoloz access under iOS <em>Settings → Apple Account → Sign in with Apple</em>. If in-app deletion cannot be completed or you cannot access the app, you may request manual deletion via the <a href="delete-account-en.html">Account Deletion Page</a> or by emailing <a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a>. The app is provided “as is” without warranties of uninterrupted third-party service availability.</p>
+  <p>You may terminate your account by initiating staged account deletion in-app (<strong>Settings → Account Management → Delete My Account</strong>). In-app deletion requires an active internet connection and recent authentication (prompting re-authentication if <code>requires-recent-login</code> occurs); if cloud data removal, Apple token revocation, Firebase Auth account deletion, or local device data cleanup fails, the app reports the specific failed stage and allows you to retry. For Sign in with Apple users, because the server-side token revocation endpoint (<code>APPLE_REVOKE_ENDPOINT</code>) is not enabled by default in unconfigured builds, the app deletes your cloud and local data and notifies you to revoke Congoloz access under iOS <em>Settings → Apple Account → Sign in with Apple</em>. If in-app deletion cannot be completed or you cannot access the app, you may request manual deletion via the <a href="delete-account-en.html">Account Deletion Page</a> or by emailing <a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a>. The app is provided “as is” without warranties of uninterrupted third-party service availability.</p>
 </main>
 </body>
 </html>
