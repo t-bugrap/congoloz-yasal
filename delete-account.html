@@ -1,129 +1,64 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hesap ve Veri Silme Talebi — Congoloz</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hesap ve Veri Silme — Congoloz</title>
   <style>
-    :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --border: #e2e8f0;
-      --accent: #ef4444;
-      --link: #007aff;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f172a;
-        --card: #1e293b;
-        --text: #f8fafc;
-        --muted: #cbd5e1;
-        --border: #334155;
-        --accent: #f87171;
-        --link: #38bdf8;
-      }
-    }
-    body {
-      margin: 0;
-      padding: 24px 16px 48px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 18px;
-    }
-    h1 {
-      margin-top: 0;
-      font-size: 1.65rem;
-    }
-    h2 {
-      font-size: 1.15rem;
-      margin-top: 0;
-      color: var(--link);
-    }
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #ffffff;
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 12px;
-      font-weight: 700;
-      margin-top: 8px;
-    }
-    .meta {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-    ol, ul {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 8px;
-    }
+    :root { --bg: #ffffff; --surface: #f7f7fa; --text: #1c1c1e; --muted: #585860; --border: #e5e5ea; --accent: #007aff; --danger: #d92d20; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    main { max-width: 820px; margin: 0 auto; padding: 24px 18px 56px; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+    .links, .lang { display: flex; gap: 12px; flex-wrap: wrap; }
+    a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 14px; }
+    .pill { padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin: 16px 0; }
+    h1 { font-size: 26px; margin: 0 0 8px; }
+    h2 { font-size: 18px; margin-top: 24px; }
+    .meta { color: var(--muted); font-size: 13.5px; }
+    .cta { display: inline-block; margin-top: 8px; padding: 10px 16px; border-radius: 10px; background: var(--danger); color: #fff; font-weight: 700; }
   </style>
 </head>
 <body>
-  <main class="container">
-    <section class="card">
-      <h1>Congoloz — Hesap ve Veri Silme</h1>
-      <p class="meta">
-        <strong>Uygulama:</strong> Congoloz (<code>com.congoloz.app</code>) &bull;
-        <strong>Geliştirici:</strong> Tarık Buğra Pak &bull;
-        <strong>E-posta:</strong> <a href="mailto:t.bugra.p.10@gmail.com">t.bugra.p.10@gmail.com</a>
-      </p>
-      <p>
-        Congoloz hesabınızı ve Firebase üzerinde tutulan tüm kişisel verilerinizi kendi isteğinizle kalıcı olarak silebilirsiniz.
-      </p>
-    </section>
+<main>
+  <nav>
+    <div class="links">
+      <a href="privacy-policy.html">Gizlilik Politikası</a>
+      <a href="terms-of-service.html">Kullanım Koşulları</a>
+      <a href="delete-account.html">Hesap Silme</a>
+    </div>
+    <div class="lang">
+      <a class="pill" href="delete-account.html">TR</a>
+      <a class="pill" href="delete-account-en.html">EN</a>
+    </div>
+  </nav>
 
-    <section class="card">
-      <h2>Yöntem 1: Uygulama İçinden Anında Silme (Önerilen)</h2>
-      <ol>
-        <li>Congoloz uygulamasını açın ve hesabınıza giriş yapın.</li>
-        <li>Sağ üstteki <strong>Ayarlar</strong> sayfasını açın.</li>
-        <li><strong>Profil &amp; Hesap</strong> bölümünde <strong>Hesabımı Sil</strong> seçeneğine dokunun.</li>
-        <li>Onay penceresini onaylayın (uzun süreli oturumlarda güvenlik nedeniyle yeniden doğrulama istenebilir).</li>
-      </ol>
-      <p class="meta">
-        Bu işlem tamamlandığında Firebase Authentication hesabınız, Cloud Firestore profiliniz (<code>users/{uid}</code>), kullanıcı adı kaydınız ve skor verileriniz anında ve geri döndürülemez biçimde silinir.
-      </p>
-    </section>
+  <h1>Congoloz Hesap ve Veri Silme</h1>
+  <p class="meta">Uygulama: Congoloz (<code>com.congoloz.app</code>) • Veri Sorumlusu: Tarık Buğra Pak • E-posta: <a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a></p>
 
-    <section class="card">
-      <h2>Yöntem 2: Uygulamaya Erişiminiz Yoksa Web / E-posta Talebi</h2>
-      <p>
-        Uygulamaya erişemiyorsanız, kayıtlı e-posta adresinizden aşağıdaki bağlantı ile hesap silme talebi gönderebilirsiniz. Talepler kimlik doğrulamanın ardından en geç <strong>7 iş günü</strong> içinde kalıcı olarak işleme alınır.
-      </p>
-      <a class="btn" href="mailto:t.bugra.p.10@gmail.com?subject=Congoloz%20Hesap%20Silme%20Talebi&body=Merhaba%2C%0A%0ACongoloz%20hesab%C4%B1m%C4%B1n%20ve%20ili%C5%9Fkili%20t%C3%BCm%20verilerin%20kal%C4%B1c%C4%B1%20olarak%20silinmesini%20talep%20ediyorum.%0A%0AKay%C4%B1tl%C4%B1%20E-posta%20%2F%20Kullan%C4%B1c%C4%B1%20Ad%C4%B1%3A%20">
-        Hesap Silme Talebi Gönder (E-posta)
-      </a>
-    </section>
+  <div class="card">
+    <h2>1. Uygulama İçinden Hesap Silme (Önerilen)</h2>
+    <ol>
+      <li>Congoloz uygulamasını açın ve <strong>Ayarlar → Profil ve Hesap → Hesabımı Sil</strong> adımına gidin.</li>
+      <li>Onay penceresini onaylayın. Oturumunuz uzun süredir açıksa (<code>requires-recent-login</code>), güvenlik nedeniyle işlemden önce şifrenizle, Google hesabınızla veya Apple hesabınızla yeniden doğrulama yapmanız istenir.</li>
+      <li>İşlem beş aşamada yürütülür: (1) Cloud Firestore üzerindeki <code>users/{uid}</code> profiliniz, <code>folders/*/cards</code> ve <code>consents</code> alt koleksiyonlarınız, <code>leaderboard/{uid}</code> liderlik kaydınız ve <code>usernames</code> kullanıcı adı rezervasyonunuz silinir; bulut silme adımı başarısız olursa yetim veri kalmaması için Firebase Auth hesabınız silinmez ve işlem durdurulur. (2) Yapılandırılmışsa sunucu tarafı Apple yetki iptali kontrol edilir. (3) Firebase Authentication kullanıcı kaydınız (<code>user.delete()</code>) silinir. (4) Bu cihazdaki yerel verileriniz (Hive <code>settings</code>, <code>wordCards</code>, <code>ai_saved_sentences_v1</code> kutuları, <code>FlutterSecureStorage</code> içindeki kişisel Gemini API anahtarınız, yerel ses kayıtları, özel profil fotoğrafı ve iOS widget verisi) temizlenir. (5) Sağlayıcı oturum bağlantıları sonlandırılır.</li>
+      <li><strong>Hata Bildirimi:</strong> Bulut verileri, kimlik hesabı, cihaz verileri veya oturum sonlandırma aşamalarından herhangi biri hata verirse uygulama <em>“Silme İşlemi Tamamlanamadı”</em> penceresinde hangi aşamanın başarısız olduğunu açıkça gösterir ve <strong>Tekrar Dene</strong> seçeneği sunar (tamamlanan aşamalar yerel olarak kaydedildiği için kaldığı yerden tekrar denenebilir).</li>
+    </ol>
+  </div>
 
-    <section class="card">
-      <h2>Silinen Verilerin Kapsamı</h2>
-      <ul>
-        <li>Firebase Auth kimlik doğrulama kaydı (<code>uid</code> ve e-posta bilgisi)</li>
-        <li>Cloud Firestore kullanıcı profili, görünen ad, <code>@kullanici_adi</code>, skor ve seri verileri</li>
-        <li>Cihazınızdaki yerel Hive verileri uygulamayı kaldırdığınızda otomatik olarak temizlenir.</li>
-      </ul>
-      <p class="meta">
-        Daha fazla bilgi için <a href="./privacy-policy.html">Gizlilik Politikası</a> sayfasını inceleyebilirsiniz.
-      </p>
-    </section>
-  </main>
+  <div class="card">
+    <h2>2. Uygulama İçi Silme Başarısız Olursa veya Uygulamaya Erişemiyorsanız (E-posta Talebi)</h2>
+    <p>Uygulama içi silme adımlarından biri tamamlanamadığında, güvenlik/moderasyon kayıtlarının da incelenmesini istediğinizde veya uygulamaya artık erişemediğinizde, hesabınızla ilişkili e-posta adresinden ya da kullanıcı adınızı (<code>@kullanici_adi</code>) belirterek aşağıdaki adrese silme talebi gönderebilirsiniz. Manuel başvurular veri sorumlusu tarafından hedef <strong>7 iş günü</strong> (yasal azami 30 gün) içinde sonuçlandırılır.</p>
+    <a class="cta" href="mailto:t.bugra.p.dev@gmail.com?subject=Congoloz%20Hesap%20Silme%20Talebi">E-posta ile Silme Talebi Gönder</a>
+  </div>
+
+  <h2>Silme Kapsamı, Apple Yetki İptali ve Teknik Yedekler</h2>
+  <ul>
+    <li><strong>Silme Kapsamındaki Veriler:</strong> Uygulama içi silme tamamlandığında Firebase Auth hesabı, <code>users/{uid}</code> dokümanı, <code>folders/*/cards</code> ve <code>consents</code> alt koleksiyonları, <code>leaderboard/{uid}</code> kaydı, <code>usernames</code> rezervasyonu ve işlem yapılan cihazdaki yerel Hive kutuları (kutu şifrelemesi için kullanılan cihaz içi teknik <code>congoloz_hive_aes_key_v1</code> anahtarı hariç tüm kullanıcı verileri), kaydedilen Gemini API anahtarı, ses kayıtları ve özel profil fotoğrafı kaldırılır. (E-posta ile yapılan manuel taleplerde bulut kayıtları silinir; cihaz içi yerel verilerin temizlenmesi için <em>Ayarlar → Gizlilik ve İzin Tercihleri → Bu Cihazdaki Yerel Verileri Temizle</em> seçeneğini kullanabilir veya uygulamayı cihazdan kaldırabilirsiniz.)</li>
+    <li><strong>Apple ile Giriş (Sign in with Apple) ve Token İptali:</strong> Sunucu tarafı Apple erişim/yenileme belirteci iptal uç noktası (<code>APPLE_REVOKE_ENDPOINT</code>) bu sürümde varsayılan olarak etkin değildir. Bu nedenle Apple ile giriş yapan bir kullanıcı uygulama içinden hesabını sildiğinde; Cloud Firestore verileri, Firebase Auth hesabı ve cihaz içi yerel veriler silinir, ardından ekranda <em>“Hesabınız Silindi”</em> bilgi penceresi açılarak Apple kimlik bağlantısını tamamen kaldırmak için iOS <em>Ayarlar → Apple Hesabı → Apple ile Giriş Yap</em> bölümünden Congoloz erişimini kaldırabileceğiniz bildirilir. (Sunucu uç noktası etkinleştirilmiş bir derlemede iptal çağrısı hata döndürürse uygulama işlemi durdurur ve <em>“Apple yetki iptali”</em> hatasını bildirir.)</li>
+    <li><strong>Moderasyon Bildirimleri ve Teknik Yedekler:</strong> Topluluk güvenliği amacıyla ayrı koleksiyonlarda tutulan uygunsuz profil/içerik bildirimleri (<code>reports</code> ve <code>ai_content_reports</code>) istemci tarafından doğrudan silinemez; bu kayıtlarla ilgili taleplerinizi <a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a> adresine iletebilirsiniz. Aktif veritabanından silinen kayıtlar, Google Cloud / Firebase olağanüstü durum yedeklerinde ve güvenlik loglarında sağlayıcının döngüsel temizleme süresi boyunca geçici olarak kalabilir.</li>
+  </ul>
+</main>
 </body>
 </html>
-

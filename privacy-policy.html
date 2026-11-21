@@ -1,128 +1,82 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gizlilik Politikası & Kullanım Koşulları — Congoloz</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gizlilik Politikası — Congoloz</title>
   <style>
-    :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --border: #e2e8f0;
-      --accent: #007aff;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f172a;
-        --card: #1e293b;
-        --text: #f8fafc;
-        --muted: #cbd5e1;
-        --border: #334155;
-        --accent: #38bdf8;
-      }
-    }
-    body {
-      margin: 0;
-      padding: 24px 16px 48px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 820px;
-      margin: 0 auto;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 18px;
-    }
-    h1 {
-      margin-top: 0;
-      font-size: 1.75rem;
-    }
-    h2 {
-      font-size: 1.2rem;
-      color: var(--accent);
-      margin-top: 0;
-    }
-    .meta {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 8px;
-    }
-    a {
-      color: var(--accent);
-      font-weight: 600;
-    }
+    :root { --bg: #ffffff; --surface: #f7f7fa; --text: #1c1c1e; --muted: #585860; --border: #e5e5ea; --accent: #007aff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    main { max-width: 820px; margin: 0 auto; padding: 24px 18px 56px; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+    .links, .lang { display: flex; gap: 12px; flex-wrap: wrap; }
+    a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 14px; }
+    a:hover { text-decoration: underline; }
+    .pill { padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); }
+    h1 { font-size: 26px; margin: 0 0 8px; }
+    h2 { font-size: 18px; margin-top: 28px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+    .meta { color: var(--muted); font-size: 13.5px; margin-bottom: 20px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin: 14px 0; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
   </style>
 </head>
 <body>
-  <main class="container">
-    <section class="card">
-      <h1>Congoloz — Gizlilik Politikası (Privacy Policy)</h1>
-      <p class="meta">
-        <strong>Son Güncelleme:</strong> 13 Kasım 2026 &bull;
-        <strong>Geliştirici / Veri Sorumlusu:</strong> Tarık Buğra Pak &bull;
-        <strong>Paket Kimliği:</strong> <code>com.congoloz.app</code> &bull;
-        <strong>İletişim:</strong> <a href="mailto:t.bugra.p.10@gmail.com">t.bugra.p.10@gmail.com</a>
-      </p>
-      <p>
-        Congoloz ("Uygulama"), çevrimdışı öncelikli çalışan çok dilli bir kelime öğrenme ve pratik uygulamasıdır.
-        Bu Gizlilik Politikası, Google Play Store ve Apple App Store gizlilik standartlarına uygun olarak
-        hangi verilerin işlendiğini ve kullanıcı haklarını şeffaf biçimde açıklar.
-      </p>
-    </section>
+<main>
+  <nav>
+    <div class="links">
+      <a href="privacy-policy.html">Gizlilik Politikası</a>
+      <a href="terms-of-service.html">Kullanım Koşulları</a>
+      <a href="delete-account.html">Hesap Silme</a>
+    </div>
+    <div class="lang">
+      <a class="pill" href="privacy-policy.html">TR</a>
+      <a class="pill" href="privacy-policy-en.html">EN</a>
+    </div>
+  </nav>
 
-    <section class="card">
-      <h2>1. Toplanan Veriler ve İşleme Amaçları</h2>
-      <ul>
-        <li><strong>Kimlik Doğrulama (Firebase Authentication):</strong> E-posta/şifre, Google ile Giriş, Apple ile Giriş veya Misafir girişi sırasında yalnızca hesap kimliği (<code>uid</code>) ve e-posta adresiniz oturum güvenliği amacıyla işlenir. E-posta adresiniz diğer kullanıcılara gösterilmez.</li>
-        <li><strong>Öğrenme Verileri (Yerel Hive &amp; Cloud Firestore):</strong> Kelime kartlarınız, klasörleriniz ve öğrenme haritası ilerlemeniz cihazınızda yerel Hive veritabanında tutulur. Görünen ad, kullanıcı adı, skor, altın ve seri (streak) bilgileri bulut eşitleme ve liderlik tablosu için Cloud Firestore'da saklanır.</li>
-        <li><strong>Cihaz İzinleri (Mikrofon, Kamera, Galeri, Dosya):</strong> Mikrofon izni (<code>RECORD_AUDIO</code>) yalnızca siz sesli pratik veya telaffuz kaydını başlattığınızda kullanılır. Kamera ve galeri yalnızca profil fotoğrafı seçerken, dosya erişimi ise yalnızca <code>.xlsx</code> kelime listesi içe/dışa aktarma sırasında çalışır.</li>
-        <li><strong>Yapay Zeka ve Çeviri:</strong> Çevrimdışı çeviriler cihaz içi Google ML Kit ile yerel olarak yapılır. Kendi Google Gemini API anahtarınızı eklerseniz anahtar cihazda şifreli <code>FlutterSecureStorage</code> içinde saklanır. Anahtar eklemeden Demo Modu kullanılabilir.</li>
-      </ul>
-    </section>
+  <h1>Congoloz Gizlilik Politikası &amp; KVKK / GDPR Aydınlatma Metni</h1>
+  <p class="meta">Son Güncelleme: 21 Kasım 2026 • Sürüm: 2026-11-20 • Veri Sorumlusu: Tarık Buğra Pak (<code>com.congoloz.app</code>) • İletişim: <a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a></p>
 
-    <section class="card">
-      <h2>2. Veri Paylaşımı, Reklam ve Güvenlik</h2>
-      <ul>
-        <li>Congoloz üçüncü taraf reklam ağları (AdMob vb.) veya kullanıcı izleme SDK'ları içermez.</li>
-        <li>Kişisel verileriniz hiçbir şekilde satılmaz, kiralanmaz veya pazarlama amacıyla paylaşılmaz.</li>
-        <li>Tüm bulut iletişimi HTTPS/TLS şifrelemesiyle gerçekleştirilir.</li>
-      </ul>
-    </section>
+  <div class="card">
+    <strong>Aydınlatma ve Açık Rıza Ayrımı:</strong> Bu sayfa bir aydınlatma metnidir. İsteğe bağlı yapay zekâ (Google Gemini API), konuşma tanıma (Speech-to-Text) ve liderlik tablosu görünürlüğü tercihleri uygulama içinde <em>Ayarlar → Gizlilik ve İzin Tercihleri</em> üzerinden ayrı olarak yönetilir ve dilediğiniz zaman geri çekilebilir.
+  </div>
 
-    <section class="card">
-      <h2>3. Hesap ve Veri Silme Hakkı</h2>
-      <p>
-        Hesabınızı ve ilişkili tüm bulut verilerinizi istediğiniz zaman silebilirsiniz:
-      </p>
-      <ul>
-        <li><strong>Uygulama İçinden:</strong> <em>Ayarlar &rarr; Profil &amp; Hesap &rarr; Hesabımı Sil</em> adımlarını izleyin.</li>
-        <li><strong>Web Üzerinden:</strong> Detaylı adımlar ve e-posta talebi için <a href="./delete-account.html">Hesap Silme Sayfasını</a> ziyaret edin.</li>
-      </ul>
-    </section>
+  <h2>1. Toplanan Veriler ve Servisler</h2>
+  <ul>
+    <li><strong>Kimlik Doğrulama (Firebase Authentication, Google Sign-In, Sign in with Apple):</strong> E-posta (veya Apple Private Relay), kullanıcı kimliği (<code>uid</code>) ve OAuth belirteçleri. E-posta adresiniz Cloud Firestore profiline veya liderlik tablosuna yazılmaz.</li>
+    <li><strong>Yerel Öğrenme Verileri (Hive AES-256 &amp; FlutterSecureStorage):</strong> Kelime kartları, 250 günlük harita, kaydedilen AI cümleleri, sesli okuma kayıtları ve kişisel Gemini API anahtarınız cihazda AES-256 şifreli Hive ve Keychain/Keystore üzerinde saklanır. Yerel ses kayıtları ve özel profil fotoğrafları buluta gönderilmez.</li>
+    <li><strong>Bulut Profili ve Liderlik Tablosu (Cloud Firestore):</strong> Takma ad (<code>@kullanici_adi</code>), avatar, skor, sanal altın, seri ve onay denetim kayıtları. Liderlik tablosu yalnızca asgari kamusal alanları içeren <code>leaderboard/{uid}</code> projeksiyonunu kullanır.</li>
+    <li><strong>Uygulama Güvenliği (Firebase App Check):</strong> Uygulama açılışında sahte istemci ve bot koruması için Android'de Play Integrity (hata ayıklama derlemelerinde debug sağlayıcısı), iOS'ta App Attest ile cihaz bütünlük doğrulaması etkinleştirilir.</li>
+    <li><strong>Yapay Zekâ (Google Gemini API, Gemini Live) ve Konuşma Tanıma:</strong> Yalnızca ayrı açık rıza ile çalışır (Google Gemini API bulut aktarımı yalnızca 18+ kullanıcıların kendi kişisel API anahtarıyla — BYOK — kullanılabilir). Gemini Live mikrofonu kullanıcı açıkça başlatmadan açılmaz ve uygulama arka plana geçtiğinde otomatik durdurulur. Google ML Kit çevirisi dil modeli indirildikten sonra cihaz içi çevrimdışı çalışır.</li>
+    <li><strong>Reklam ve Uygulama İçi Satın Alma:</strong> Bu sürümde aktif reklam ağı, reklam izleme (IDFA/AAID) veya uygulama içi satın alma bulunmamaktadır.</li>
+  </ul>
 
-    <section class="card">
-      <h2>4. Kullanım Koşulları Özeti &amp; Çocukların Gizliliği</h2>
-      <ul>
-        <li>Uygulama 13 yaş altındaki çocuklardan bilerek kişisel veri toplamaz.</li>
-        <li>Sanal altın, seri dondurma ve skor puanları yalnızca eğitim/oyunlaştırma amaçlıdır ve gerçek para değeri taşımaz.</li>
-        <li>Her türlü soru ve veri talebi için <a href="mailto:t.bugra.p.10@gmail.com">t.bugra.p.10@gmail.com</a> adresinden bize ulaşabilirsiniz.</li>
-      </ul>
-    </section>
-  </main>
+  <h2>2. 13–17 Yaş Kullanıcıların Korunması (Global 13+)</h2>
+  <ul>
+    <li>Congoloz 13 yaş ve üzeri kullanıcılar içindir; tam doğum tarihi (<code>birthDate</code>) toplanmaz ve saklanmaz, yalnızca kaba yaş grubu kullanılır.</li>
+    <li><strong>13–17 Yaş kullanıcılarında</strong> liderlik tablosu, AI veri aktarımı ve konuşma tanıma varsayılan olarak kapalı başlar; gerçek ad ve profil fotoğrafı paylaşılmaz (yalnızca <code>@kullanici_adi</code> ve emoji avatar). Google AI Studio ve Gemini API Hizmet Koşulları (18+ şartı) gereği 13–17 yaş kullanıcılarında kişisel API anahtarı (BYOK) girişi kapalıdır; bu yaş grubunda güvenli AI Demo Modu ve cihaz içi çevrimdışı ML Kit çevirisi kullanılır.</li>
+    <li>Google Gemini SDK metin/cümle isteklerinde güvenlik filtreleri 13–17 yaş koruma modunda düşük eşikte (<code>HarmBlockThreshold.low</code>), 18+ kullanıcılarda orta eşikte (<code>HarmBlockThreshold.medium</code>) yapılandırılır ve sistem talimatlarına güvenlik kuralları eklenir; tüm AI ekranlarında “Yanıtı Bildir” butonu bulunur.</li>
+  </ul>
+
+  <h2>3. Hukuki Dayanaklar ve Uluslararası Veri Aktarımı (KVKK m.5, m.9 &amp; GDPR)</h2>
+  <ul>
+    <li><strong>Ayrıştırılmış Onay ve Açık Rıza Mekanizması:</strong> Kayıt veya giriş öncesinde açılan onay ekranında (1) bu Gizlilik Politikası ve Aydınlatma Metni'nin okunduğu beyanı ile (2) Kullanım Koşulları kabulü ayrı kutularla alınır (cihaz bölgesi yaş eşiğinin altındaki 13–17 yaş kullanıcılarında ayrıca veli/vasi onay beyanı istenir). Bu ilk adım temel hesap ve bulut profil eşitlemesini başlatır; <strong>isteğe bağlı açık rızaları otomatik olarak aktif etmez</strong> (Gemini API bulut aktarımı ve konuşma tanıma kapalı, liderlik tablosu 13–17 yaşta kapalı / 18+ yaşta açık başlar).</li>
+    <li><strong>Hukuki Dayanaklar:</strong> Temel hesap, kimlik doğrulama ve bulut profil eşitlemesi sözleşmenin kurulması ve ifası (KVKK m.5/2-c, GDPR m.6(1)(b)); uygulama açılışında çalışan Firebase App Check güvenlik doğrulaması veri sorumlusunun meşru menfaati (KVKK m.5/2-f, GDPR m.6(1)(f)); isteğe bağlı Google Gemini API (18+ BYOK) bulut aktarımı ve Konuşma Tanıma (Speech-to-Text) ise ilk kullanımda açılan ayrı onay penceresi veya <em>Ayarlar → Gizlilik ve İzin Tercihleri</em> üzerinden verilen ve her zaman geri çekilebilen açık rıza (KVKK m.5/1, GDPR m.6(1)(a)) kapsamında işlenir.</li>
+    <li><strong>Yurt Dışına Veri Aktarımı:</strong> Uygulama açılışında Firebase başlatma ve App Check doğrulaması ile hesap girişi, Cloud Firestore eşitlemesi ve (yalnızca açık rıza verildiğinde) Google Gemini API / konuşma tanıma istekleri; Google LLC (Firebase, Google Cloud, Gemini API) ve Apple Inc. tarafından yurt dışında işletilen sunucular üzerinden gerçekleştirilir. KVKK m.9 kapsamındaki yurt dışı aktarım mekanizmaları (standart sözleşme veya Kurum bildirimi süreçleri) bakımından tamamlanmış ayrı bir taahhüt beyan edilmemekte olup, isteğe bağlı bulut özellikleri yalnızca açık rızanızla çalışır. Hesap oluşturmadan ve bulut aktarımı olmadan temel kelime kartlarını çalıştırmak isterseniz uygulamayı çevrimdışı (cihaz içi) olarak kullanabilirsiniz.</li>
+  </ul>
+
+  <h2>4. Saklama Süreleri, Teknik Yedekler ve Hesap Silme</h2>
+  <p>Uygulama içinden <strong>Ayarlar → Profil ve Hesap → Hesabımı Sil</strong> adımıyla hesap ve veri silme işlemini başlatabilirsiniz. Silme işlemi aşamalı olarak yürütülür (1. Cloud Firestore <code>users/{uid}</code> profili, <code>folders/*/cards</code> ve <code>consents</code> alt koleksiyonları, <code>leaderboard/{uid}</code> ve <code>usernames</code> kaydı → 2. yapılandırılmışsa Apple yetki iptali → 3. Firebase Auth hesabı → 4. cihaz içi yerel veriler → 5. sağlayıcı oturum çıkışları):</p>
+  <ul>
+    <li><strong>Hata ve Kısmi Tamamlanma Bildirimi:</strong> Bulut verileri, Firebase Auth hesabı veya cihaz içi yerel veri temizliği adımlarından biri ağ kesintisi ya da hata nedeniyle başarısız olursa uygulama sahte başarı mesajı göstermez; <em>“Silme İşlemi Tamamlanamadı”</em> uyarısıyla hangi aşamanın başarısız olduğunu (ör. Bulut verileri, Kimlik hesabı, Cihaz verileri) açıkça listeler ve <strong>Tekrar Dene</strong> seçeneği sunar. Oturumunuz eskiyse (<code>requires-recent-login</code>) işlem durdurularak şifre, Google veya Apple ile yeniden doğrulama penceresi açılır.</li>
+    <li><strong>Apple ile Giriş (Sign in with Apple) Davranışı:</strong> Sunucu tarafı Apple erişim/yenileme belirteci iptal uç noktası (<code>APPLE_REVOKE_ENDPOINT</code>) bu sürümde varsayılan olarak etkin değildir. Bu nedenle Apple ile giriş yapan kullanıcılarda uygulama; Cloud Firestore verilerini, Firebase Auth hesabını ve cihaz içi yerel verileri sildikten sonra <em>“Hesabınız Silindi”</em> penceresinde Apple kimlik yetkilendirmesini tamamen kaldırmak için iOS <em>Ayarlar → Apple Hesabı → Apple ile Giriş Yap</em> bölümünden Congoloz erişimini ayrıca kaldırabileceğinizi bildirir (sunucu uç noktası yapılandırılmışsa ve çağrı hata verirse işlem durur ve hata bildirilir).</li>
+    <li><strong>Alternatif Başvuru ve Kalan Kayıtlar:</strong> Uygulama içi silme işlemi tamamlanamazsa veya uygulamaya erişemiyorsanız <a href="delete-account.html">Hesap Silme Sayfası</a> ya da <a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a> üzerinden manuel silme talebi iletebilirsiniz (hedef: 7 iş günü, yasal azami 30 gün). Uygulama içi otomatik silme, güvenlik/moderasyon amacıyla ayrı tutulan <code>reports</code> ve <code>ai_content_reports</code> bildirim kayıtlarını kapsamaz; bu kayıtlar için de e-posta ile başvurabilirsiniz. Aktif veritabanından silinen kayıtlar, Google/Firebase teknik yedeklerinde sağlayıcının döngüsel temizleme süresi boyunca geçici olarak kalabilir.</li>
+  </ul>
+
+  <h2>5. Haklarınız (KVKK m.11 &amp; GDPR)</h2>
+  <p>Erişim, düzeltme, silme, itiraz ve rıza geri çekme talepleriniz için veri sorumlusu <strong>Tarık Buğra Pak</strong> (<a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a>) ile iletişime geçebilirsiniz.</p>
+</main>
 </body>
 </html>
-

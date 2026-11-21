@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Congoloz</title>
+  <style>
+    :root { --bg: #ffffff; --surface: #f7f7fa; --text: #1c1c1e; --muted: #585860; --border: #e5e5ea; --accent: #007aff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    main { max-width: 820px; margin: 0 auto; padding: 24px 18px 56px; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+    .links, .lang { display: flex; gap: 12px; flex-wrap: wrap; }
+    a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 14px; }
+    a:hover { text-decoration: underline; }
+    .pill { padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); }
+    h1 { font-size: 26px; margin: 0 0 8px; }
+    h2 { font-size: 18px; margin-top: 28px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+    .meta { color: var(--muted); font-size: 13.5px; margin-bottom: 20px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin: 14px 0; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+<main>
+  <nav>
+    <div class="links">
+      <a href="privacy-policy-en.html">Privacy Policy</a>
+      <a href="terms-of-service-en.html">Terms of Service</a>
+      <a href="delete-account-en.html">Delete Account</a>
+    </div>
+    <div class="lang">
+      <a class="pill" href="privacy-policy.html">TR</a>
+      <a class="pill" href="privacy-policy-en.html">EN</a>
+    </div>
+  </nav>
+
+  <h1>Congoloz Privacy Policy (Global 13+ / GDPR &amp; KVKK)</h1>
+  <p class="meta">Last Updated: November 21, 2026 • Version: 2026-11-20 • Data Controller: Tarık Buğra Pak (<code>com.congoloz.app</code>) • Contact: <a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a></p>
+
+  <div class="card">
+    <strong>Notice vs. Consent:</strong> This document is a privacy notice. Optional consents for Google Gemini API cloud transfer, Speech-to-Text, and Global Leaderboard visibility are separated and can be granted or withdrawn anytime under <em>Settings → Privacy &amp; Consent Preferences</em>.
+  </div>
+
+  <h2>1. Data We Process &amp; Services Used</h2>
+  <ul>
+    <li><strong>Authentication (Firebase Authentication, Google Sign-In, Sign in with Apple):</strong> Email address (or Apple Private Relay), user ID (<code>uid</code>), and OAuth tokens. Your email address is never written to Cloud Firestore profiles or the public leaderboard.</li>
+    <li><strong>Local On-Device Storage (Hive AES-256 &amp; FlutterSecureStorage):</strong> Flashcards, 250-day learning map, saved AI sentences, local voice practice recordings, and your personal Gemini API key (if provided) are stored on-device with AES-256 encryption and hardware-backed Keychain/Keystore. Local audio recordings and custom profile photos are never uploaded to the cloud.</li>
+    <li><strong>Cloud Profile &amp; Leaderboard (Cloud Firestore):</strong> Nickname (<code>@username</code>), avatar, trophy score, virtual gold, streak, and immutable consent audit records. The leaderboard uses a minimal <code>leaderboard/{uid}</code> projection without email, birth date, or age band.</li>
+    <li><strong>App Security (Firebase App Check):</strong> Activated at app startup using Android Play Integrity (or debug provider in debug builds) and iOS App Attest to help protect against unauthorized clients and automated abuse.</li>
+    <li><strong>Optional AI (Google Gemini API, Gemini Live) &amp; Speech-to-Text:</strong> Active only with separate, revocable consent (Google Gemini API cloud transfer is available only to 18+ users who provide their own personal BYOK API key). Gemini Live never starts microphone streaming automatically and stops the microphone when the app moves to the background. Google ML Kit translation runs on-device after downloading the language model.</li>
+    <li><strong>No Active Ads or In-App Purchases:</strong> This version does not include third-party advertising networks, ad tracking (IDFA/AAID), session replay, or in-app purchases.</li>
+  </ul>
+
+  <h2>2. Protection of Ages 13–17 (Global 13+)</h2>
+  <ul>
+    <li>Congoloz is intended for users aged 13 and older. Full birth dates (<code>birthDate</code>) are never collected or stored; only a coarse age band is used.</li>
+    <li>For users aged 13–17, leaderboard visibility, cloud AI transfer, and speech recognition default to OFF; real names and profile photos are restricted to nickname (<code>@username</code>) and safe emoji avatars only. In accordance with Google AI Studio and Gemini API Additional Terms of Service (18+ requirement), personal BYOK API key entry is disabled for users aged 13–17, who instead use safe offline-capable Demo Mode and on-device ML Kit translation.</li>
+    <li>For Google Gemini SDK text/sentence requests, safety filters are configured at <code>HarmBlockThreshold.low</code> in 13–17 protection mode and <code>HarmBlockThreshold.medium</code> for 18+ users along with system-prompt safety instructions, and all AI screens provide a “Report Response” action.</li>
+  </ul>
+
+  <h2>3. Legal Bases &amp; International Transfers (GDPR Ch. V &amp; KVKK Art. 9)</h2>
+  <ul>
+    <li><strong>How the Consent &amp; Notice Mechanism Works:</strong> Before sign-in or registration, the compliance gate requires separate checkboxes for (1) acknowledging this Privacy Policy / Notice and (2) accepting the Terms of Service (plus a parent/guardian confirmation checkbox when a 13–17 user is below the regional digital consent age threshold). Completing this gate enables account creation and cloud profile sync; it <strong>does not automatically turn on optional consents</strong> (Gemini API cloud transfer and Speech-to-Text start OFF; Leaderboard visibility starts OFF for ages 13–17 and ON for 18+).</li>
+    <li><strong>Legal Bases:</strong> Core account authentication and Cloud Firestore profile sync are processed for the performance of a contract (GDPR Art. 6(1)(b) / KVKK Art. 5/2-c); Firebase App Check verification at startup is processed under legitimate interest in application security (GDPR Art. 6(1)(f) / KVKK Art. 5/2-f); optional Google Gemini API (18+ BYOK) cloud transfer and Speech-to-Text run only after you grant separate, revocable explicit consent via an in-app prompt or <em>Settings → Privacy &amp; Consent Preferences</em> (GDPR Art. 6(1)(a) / KVKK Art. 5/1).</li>
+    <li><strong>Cross-Border Data Transfers:</strong> Firebase initialization and App Check at startup, as well as authentication, Cloud Firestore sync, and (when explicitly consented) Google Gemini API and speech recognition requests, are processed through servers operated outside your country (including in the US and EU) by Google LLC (Firebase, Google Cloud, Gemini API) and Apple Inc. No claim is made that a separate KVKK Art. 9 Standard Contract signing or authority notification has been completed; optional cloud AI and speech transfers occur only with your explicit consent, and core flashcards and learning features can be used offline on your device without creating an account.</li>
+  </ul>
+
+  <h2>4. Retention, Technical Backups &amp; Account Deletion</h2>
+  <p>You can initiate account and data deletion in-app via <strong>Settings → Profile &amp; Account → Delete My Account</strong>. Deletion executes in sequential stages (1. Cloud Firestore <code>users/{uid}</code> profile, <code>folders/*/cards</code> and <code>consents</code> subcollections, <code>leaderboard/{uid}</code>, and <code>usernames</code> reservation → 2. Sign in with Apple token revocation if a server endpoint is configured → 3. Firebase Auth account → 4. local on-device data → 5. provider sign-out):</p>
+  <ul>
+    <li><strong>Error Reporting on Partial Failure:</strong> If cloud data removal, Firebase Auth account deletion, or local device data cleanup fails due to network errors or exceptions, the app does not show a false success message; it displays an incomplete-deletion dialog naming the failed stage(s) (e.g., Cloud data, Auth account, Device data) with a <strong>Retry</strong> button. If your sign-in session is not recent (<code>requires-recent-login</code>), deletion pauses and prompts you to re-authenticate with your password, Google, or Apple account.</li>
+    <li><strong>Sign in with Apple Behavior:</strong> The server-side Apple token revocation endpoint (<code>APPLE_REVOKE_ENDPOINT</code>) is not enabled by default in this build. Consequently, for Sign in with Apple users, the app deletes your Cloud Firestore records, Firebase Auth account, and local device data, and then displays a notice explaining that to completely remove Apple ID linkage you should revoke Congoloz under iOS <em>Settings → Apple Account → Sign in with Apple</em> (if a server endpoint is configured and returns an error, the deletion stops and reports the failure).</li>
+    <li><strong>Alternative Email Request &amp; Retained Records:</strong> If in-app deletion cannot be completed or you cannot access the app, you may submit a manual request via the <a href="delete-account-en.html">Account Deletion Page</a> or email <a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a> (target: 7 business days; statutory maximum: 30 days). Automated in-app deletion does not delete separate moderation/safety records in the <code>reports</code> and <code>ai_content_reports</code> collections, which can be requested via email. Deleted records may also remain temporarily in Google/Firebase automated disaster-recovery backups and security logs until their rolling retention cycle expires.</li>
+  </ul>
+
+  <h2>5. Your Privacy Rights</h2>
+  <p>Contact <strong>Tarık Buğra Pak</strong> at <a href="mailto:t.bugra.p.dev@gmail.com">t.bugra.p.dev@gmail.com</a> to exercise rights of access, rectification, erasure, restriction, portability, objection, or consent withdrawal, or lodge a complaint with your local data protection authority.</p>
+</main>
+</body>
+</html>
